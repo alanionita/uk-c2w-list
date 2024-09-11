@@ -12,3 +12,9 @@ export function getMapRecords() {
     return getRecords<App.MapRecord>(MAP_JSON_PATH);
 
 }
+
+export function getOrgRecord(slug:string) {
+    const PAGE_JSON_PATH = path.join(process.cwd(), "static", "pages", `${slug}.json`);
+    return getRecords<App.OrgRecord>(PAGE_JSON_PATH);
+
+}

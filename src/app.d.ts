@@ -17,6 +17,18 @@ declare global {
 			records: MapRecord[]
 		}
 		type MapPage = PageData & MapPageData
+
+
+		interface OrgRecord {
+			org: string;
+			cityTown: string
+			postcode: string
+			slug: string
+		};
+		type OrgPageData = {
+			org: OrgRecord
+		}
+		type OrgPage = PageData & OrgPageData
 	}
 }
 
