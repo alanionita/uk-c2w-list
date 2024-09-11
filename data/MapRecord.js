@@ -3,7 +3,7 @@ class MapRecord {
         this.org = org;
         this.cityTown = cityTown;
         this.postcode = postcode;
-        this.slug = slug;
+        this.slug = slug.toLowerCase();
     }
 }
 

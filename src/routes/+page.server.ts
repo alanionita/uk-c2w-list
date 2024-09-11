@@ -1,4 +1,4 @@
-import { getMapRecords } from '$lib/mapRecords';
+import { getMapRecords } from '$lib/records';
 import { error } from '@sveltejs/kit';
 
 export function load() {

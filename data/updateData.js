@@ -1,20 +1,15 @@
-import { generateJSON } from "./generators.js";
-import * as path from 'path';
-import { fileURLToPath } from 'url';
+import { generateMapJSON, makePath } from "./generators.js";
 import { writeFile } from "fs/promises";
 
-
-
-function updateDataJson() {
-    const __filename = fileURLToPath(import.meta.url);
-    const __dirname = path.dirname(__filename);
-    const csvPath = path.resolve(__dirname, 'sample.csv');
-    const json = generateJSON(csvPath);
-    console.log('json ::', json)
-    
+function writeMapJSON() {
+    const json = generateMapJSON();
     // Write to json file
-    const outPath = path.resolve(__dirname, '../static/data.json');
+    const outPath = makePath('../static/map.json');
     writeFile(outPath, JSON.stringify(json))
 }
 
-updateDataJson()
+function writeJSON() {
+    writeMapJSON()
+}
+
+writeJSON()
