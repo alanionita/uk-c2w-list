@@ -1,0 +1,62 @@
+[
+    {
+        "org": "Lead Employer Trust",
+        "cityTown": "Newcastle Upon Tyne",
+        "postcode": "NE15 8NY",
+        "slug": "North-East-and-North-Cumbria-Lead-Employer-Trust-2023"
+    },
+    {
+        "org": "University of Central Lancashire",
+        "cityTown": "Preston",
+        "postcode": "PR1 2HE",
+        "slug": "University-of-Central-Lancashire-2023"
+    },
+    {
+        "org": "University of Bristol",
+        "cityTown": "Bristol",
+        "postcode": "BS8 1QU",
+        "slug": "University-of-Bristol-2023"
+    },
+    {
+        "org": "University of Brighton",
+        "cityTown": "Brighton",
+        "postcode": "BN2 4AT",
+        "slug": "University-of-Brighton-2023"
+    },
+    {
+        "org": "South Wales FRS",
+        "cityTown": "Llantrisant",
+        "postcode": "CF72 8LX",
+        "slug": "South-Wales-Fire-and-Rescue-Service-2023"
+    },
+    {
+        "org": "University of Edinburgh",
+        "cityTown": "Edinburgh",
+        "postcode": "EH8 9YL",
+        "slug": "University-of-Edinburgh-2023"
+    },
+    {
+        "org": "Swansea University",
+        "cityTown": "Swansea",
+        "postcode": "SA1 8EN",
+        "slug": "Swansea-University-2023"
+    },
+    {
+        "org": "Gloucestershire County Council",
+        "cityTown": "Gloucester",
+        "postcode": "GL1 2TG",
+        "slug": "Gloucestershire-County-Council-2023"
+    },
+    {
+        "org": "University College London Hospitals NHS Foundation Trust",
+        "cityTown": "London",
+        "postcode": "NW1 2PG",
+        "slug": "University-College-London-Hospitals-NHS-Foundation-Trust-2023"
+    },
+    {
+        "org": "Meteorological Office",
+        "cityTown": "Exeter",
+        "postcode": "EX1 3PB",
+        "slug": "Met-Office-2023"
+    }
+]
