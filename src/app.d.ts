@@ -7,7 +7,17 @@ declare global {
 		// interface PageData {}
 		// interface PageState {}
 		// interface Platform {}
+		interface MapRecord {
+			org: string;
+			cityTown: string
+			postcode: string
+			slug: string
+		};
+		type MapPageData = {
+			records: MapRecord[]
+		}
+		type MapPage = PageData & MapPageData
 	}
 }
 
-export {};
+export { };
