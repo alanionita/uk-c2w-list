@@ -7,4 +7,5 @@ export function load() {
     return { records }
 }
 
+export const ssr = false;
 export const prerender = true;

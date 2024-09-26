@@ -11,8 +11,8 @@ declare global {
 			org: string;
 			cityTown: string
 			postcode: string
-			lat: string
-			long: string
+			lat: number
+			long: number
 			slug: string
 		};
 		type MapPageData = {
@@ -25,8 +25,8 @@ declare global {
 			org: string;
 			cityTown: string
 			postcode: string
-			lat: string
-			long: string
+			lat: number
+			long: number
 			slug: string
 		};
 		type OrgPageData = {
