@@ -17,7 +17,7 @@ export function rowToPageRecord(row) {
     const long = row[8];
     const slug = row[2]; // Actually uses UUID
     if (!slug) {
-        return null;
+        return;
     } 
     return new PageRecord({ org, cityTown, postcode, slug, lat, long })
 }

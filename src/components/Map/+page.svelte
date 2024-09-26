@@ -31,12 +31,16 @@
 			if (map instanceof Leaflet.Map && records) {
 				records.forEach(({ lat, long, org, slug }: App.MapRecord) => {
                     // TODO: break into smaller component
-                    const popUp = `<div>
-                        <a href="./org/${slug}">${org}</a>
-                    </div>`
-
-					const marker = Leaflet.marker([lat, long]).bindPopup(popUp).openPopup();
-                    mapLayers.addLayer(marker);
+                    if (slug) {
+                        console.log('slug ::', slug)
+                        const popUp = `<div>
+                            <a href="./org/${slug}">${org}</a>
+                        </div>`
+    
+                        const marker = Leaflet.marker([lat, long]).bindPopup(popUp).openPopup();
+                        mapLayers.addLayer(marker);
+                    }
+                    
 				});
 			}
 

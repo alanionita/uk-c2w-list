@@ -16,6 +16,6 @@ export function rowToMapRecord(row) {
     const lat = row[7];
     const long = row[8];
     const slug = row[2]; // Actually uses UUID
-
+    if (!slug || slug.length === 0) return; 
     return new MapRecord({ org, cityTown, postcode, slug, lat, long })
 }

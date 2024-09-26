@@ -7,4 +7,4 @@ export async function load({ params }) {
     return { org }
 }
 
-export const prerender = true;
+export const ssr = false;
