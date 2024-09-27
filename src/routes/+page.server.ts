@@ -6,6 +6,3 @@ export function load() {
     if (!records) error(404, 'MapRecords Not found');
     return { records }
 }
-
-export const ssr = false;
-export const prerender = true;
