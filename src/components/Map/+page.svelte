@@ -1,11 +1,11 @@
 <script lang="ts">
+	import { CustomLeafletMap } from '$lib/leafletMap';
 	import Leaflet from 'leaflet';
 	import 'leaflet/dist/leaflet.css';
 	import { onDestroy, onMount, setContext } from 'svelte';
 
 	let map: Leaflet.Map | null;
 	let mapEl: HTMLElement;
-	let mapLayers: Leaflet.LayerGroup;
 
 	export let bounds: Leaflet.LatLngBoundsExpression | null = null;
 	export let view: Leaflet.LatLngExpression | null = null;
@@ -14,42 +14,20 @@
 
 	onMount(() => {
 		try {
-			map = Leaflet.map(mapEl) as Leaflet.Map;
-
-			Leaflet.tileLayer(
-				'https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png',
-				{
-					attribution: `&copy;<a href="https://www.openstreetmap.org/copyright" target="_blank">OpenStreetMap</a>,
-                &copy;<a href="https://carto.com/attributions" target="_blank">CARTO</a>`,
-					subdomains: 'abcd',
-					maxZoom: 10
+			const customLeafletMap = new CustomLeafletMap();
+			if (records && records.length > 0) {
+				const leafletMap = customLeafletMap.init(mapEl, records);
+				if (leafletMap instanceof Leaflet.Map) {
+					map = leafletMap;
 				}
-			).addTo(map);
-
-            mapLayers = Leaflet.layerGroup()
-
-			if (map instanceof Leaflet.Map && records) {
-				records.forEach(({ lat, long, org, slug }: App.MapRecord) => {
-                    // TODO: break into smaller component
-                    if (slug) {
-                        console.log('slug ::', slug)
-                        const popUp = `<div>
-                            <a href="./org/${slug}">${org}</a>
-                        </div>`
-    
-                        const marker = Leaflet.marker([lat, long]).bindPopup(popUp).openPopup();
-                        mapLayers.addLayer(marker);
-                    }
-                    
-				});
 			}
-
-			mapLayers.addTo(map);
 		} catch (err: unknown) {
 			if (err instanceof Error) {
-				console.error('Error [Map] :', err?.message);
+				console.error('Error [Map] :', err.message);
 				throw err;
 			}
+
+			return Error('Unknown error')
 		}
 	});
 	onDestroy(() => {
