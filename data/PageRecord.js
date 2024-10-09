@@ -10,14 +10,9 @@ class PageRecord {
 }
 
 export function rowToPageRecord(row) {
-    const org = row[0];
-    const cityTown = row[5];
-    const postcode = row[6];
-    const lat = row[7];
-    const long = row[8];
-    const slug = row[2]; // Actually uses UUID
-    if (!slug) {
-        return;
-    } 
-    return new PageRecord({ org, cityTown, postcode, slug, lat, long })
+    if(!row.UID) return;
+    if(row.UID) {
+        row.Slug = row.UID // Replace old Slug
+    }
+    return row // No longer returning PageRecord because it can be so broad
 }

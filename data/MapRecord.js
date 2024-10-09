@@ -10,12 +10,12 @@ class MapRecord {
 }
 
 export function rowToMapRecord(row) {
-    const org = row[0];
-    const cityTown = row[5];
-    const postcode = row[6];
-    const lat = row[7];
-    const long = row[8];
-    const slug = row[2]; // Actually uses UUID
+    const org = row['Org'];
+    const cityTown = row['City/Town'];
+    const postcode = row['Postcode'];
+    const lat = row['lat'];
+    const long = row['long'];
+    const slug = row['UID'];
     if (!slug || slug.length === 0) return; 
     return new MapRecord({ org, cityTown, postcode, slug, lat, long })
 }

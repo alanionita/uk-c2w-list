@@ -22,12 +22,7 @@ declare global {
 
 
 		interface OrgRecord {
-			org: string;
-			cityTown: string
-			postcode: string
-			lat: number
-			long: number
-			slug: string
+			[key: string]: string
 		};
 		type OrgPageData = {
 			org: OrgRecord

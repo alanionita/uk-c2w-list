@@ -15,7 +15,7 @@ function readCSV() {
     try {
         const csvPath = makePath('sample.csv')
         const fileData = fs.readFileSync(csvPath)
-        const [header, ...rows] = parse(fileData, { columns: false, trim: true })
+        const rows = parse(fileData, { columns: true, trim: true })
         return rows
     } catch (err) {
         console.error('Err [readCSV] : ', err.message);
@@ -40,8 +40,8 @@ export function generatePageJSON() {
         const pages = rows.map(rowToPageRecord);
 
         const pagesObj = pages.reduce((acc, page) => {
-            if (!page.slug) return acc;
-            acc[page.slug] = page;
+            if (!page.UID) return acc;
+            acc[page.UID] = page;
             return acc;
         }, {});
         return pagesObj
