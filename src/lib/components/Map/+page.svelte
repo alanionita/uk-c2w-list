@@ -50,7 +50,7 @@
 	}
 </script>
 
-<figure class="map" bind:this={mapEl}>
+<figure class="map flex-1" bind:this={mapEl}>
 	<slot />
 </figure>
 

@@ -14,15 +14,18 @@ const config = {
 			precompress: true, // TODO: toggle on/off and compare
 			strict: true
 		}),
+		alias: {
+			"@/*": "./src/*",
+		},
 		paths: {
 			// base: process.argv.includes('dev') ? '' : process.env.BASE_PATH,
 		},
 		prerender: {
 			crawl: true,
-			entries: ["*"]		
+			entries: ["*"]
 		}
 	},
 	preprocess: [vitePreprocess()]
 };
- 
+
 export default config;

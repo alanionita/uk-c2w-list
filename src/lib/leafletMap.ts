@@ -84,10 +84,18 @@ export class CustomLeafletMap {
 
 
     }
+    // makeMarkerPopup(slug: string, org: string): string {
+    //     const html = `<div>
+    //                 <a href="./org/${slug}">${org}</a>
+    //             </div>`;
+    //     return html;
+    // }
     makeMarkerPopup(slug: string, org: string): string {
-        const html = `<div>
+        const html = `<HoverCard.Root>
+                <HoverCard.Content>
                     <a href="./org/${slug}">${org}</a>
-                </div>`;
+                </HoverCard.Content>
+            </HoverCard.Root>`; 
         return html;
     }
 }
